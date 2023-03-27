@@ -10,6 +10,9 @@
 </head>
 
 <body>
+
+    <?php require_once('navbar.php'); ?>
+
     <div class="container">
         <form action="products.php" method="POST">
             <fieldset>

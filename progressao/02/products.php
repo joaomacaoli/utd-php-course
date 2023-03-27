@@ -16,6 +16,6 @@
 	fclose($arquivo);
 
 	# Redirecionar para o cadastro novamente
-    header ("location: cadProducts.php");
+    header ("location: listProducts.php");
 
 ?>
