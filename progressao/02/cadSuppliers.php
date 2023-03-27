@@ -13,7 +13,7 @@
     <?php require_once('navbar.php'); ?>
 
     <div class="container">
-        <form action="suppliers.php" method="POST">
+        <form action="createSuppliers.php" method="POST">
             <fieldset>
                 <legend>Cadastro de Fornedores</legend>
                 <div class="form-row">

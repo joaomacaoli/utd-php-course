@@ -55,7 +55,7 @@
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
-													<a href="deletar.php?id=<?= $chave; ?>" type="button" class="btn btn-success">Sim, pode continuar !</a>
+													<a href="deleteProducts.php?id=<?= $chave; ?>" type="button" class="btn btn-success">Sim, pode continuar !</a>
 												</div>
 											</div>
 										</div>

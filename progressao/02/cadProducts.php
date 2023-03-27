@@ -14,7 +14,7 @@
     <?php require_once('navbar.php'); ?>
 
     <div class="container">
-        <form action="products.php" method="POST">
+        <form action="createProducts.php" method="POST">
             <fieldset>
                 <legend>Cadastro de Produtos</legend>
                 <div class="form-row">
