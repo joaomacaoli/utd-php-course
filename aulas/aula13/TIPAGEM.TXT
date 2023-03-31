@@ -1,0 +1,21 @@
+INT (1, 11) [ NÚMEROS INTEIROS ]
+CHAR (1,255) [ CARACTES ]
+
+`codigo` INT(8),
+`sexo` CHAR(1),
+`uf` CHAR(2),
+`aeroporto` CHAR(2),
+`nome` VARCHAR(50),
+`cpf` VARCHAR(15),
+`ddi` VARCHAR(5),
+`ddd` CHAR(2),
+`telefone` VARCHAR(10),
+`obs` TEXT,
+`nascimento` DATE, (YYYY-MM-DD)
+`valor` FLOAT(9,2), 9999999.99
+`midia` BLOB,
+`dataDeCriacao` TIMESTAMP (YYYY-MM-DD HH:II:SS) 
+
+
+Anthony Jefferson Gonçalves de Moura
+João da Silva
