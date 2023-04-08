@@ -31,11 +31,11 @@ CREATE TABLE `clients` (
   `id_client` int(6) NOT NULL,
   `client_name` varchar(50) DEFAULT NULL,
   `client_email` varchar(50) DEFAULT NULL,
+  `client_adddress` varchar(50) DEFAULT NULL,
   `client_password` varchar(50) DEFAULT NULL,
   `client_cpf` varchar(15) DEFAULT NULL,
   `client_phone` varchar(20) DEFAULT NULL,
   `client_type` varchar(10) DEFAULT NULL,
-  `client_adddress` varchar(50) DEFAULT NULL,
   `client_created_in` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -250,3 +250,17 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `suppliers` (
+  `id_supplier` int(6) NOT NULL,
+  `supplier_name` varchar(50) DEFAULT NULL,
+  `supplier_cnpj` varchar(15) DEFAULT NULL,
+  `supplier_corporate_name` varchar(50) DEFAULT NULL,
+  `supplier_created_in` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `suppliers`
+  ADD PRIMARY KEY (`id_supplier`);
+
+ALTER TABLE `suppliers`
+  MODIFY `id_supplier` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

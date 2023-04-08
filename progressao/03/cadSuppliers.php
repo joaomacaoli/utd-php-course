@@ -10,41 +10,38 @@
 </head>
 
 <body>
-	<?php include_once 'components/navbar.php'; ?>
+    <?php include_once 'components/navbar.php'; ?>
 
     <div class="container">
-        <form action="createSuppliers.php" method="POST">
+        <form action="createSupplier.php" method="POST">
             <fieldset>
                 <legend>Cadastro de Fornedores</legend>
                 <div class="form-row">
                     <div class="col">
-                        <label for="formName">Nome</label>
-                        <input type="text" id="formName" name="formName" class="form-control" placeholder="Digite o nome do fornecedor" required>
+                        <label for="supplier_name">Nome</label>
+                        <input type="text" id="supplier_name" name="supplier_name" class="form-control" placeholder="Digite o nome do fornecedor" required>
                     </div>
                     <div class="col">
-                        <label for="formCNPJ">CNPJ</label>
-                        <input type="number" id="formCNPJ" name="formCNPJ" class="form-control" placeholder="Digite a quantidade em estoque" required min="1" maxlength="3" step="1">
+                        <label for="supplier_cnpj">CNPJ</label>
+                        <input type="text" id="supplier_cnpj" name="supplier_cnpj" class="form-control" placeholder="Digite a quantidade em estoque" required min="1" maxlength="14" step="1">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col">
-                        <label for="formSocial">Razão social</label>
-                        <input type="text" id="formSocial" name="formSocial" class="form-control" placeholder="Digite o código" required>
-                    </div>
-                    <div class="col">
-                        <label for="formRegistrationDate">Data de cadastro</label>
-                        <input type="date" id="formRegistrationDate" name="formRegistrationDate" class="form-control" required>
+                        <label for="supplier_corporate_name">Razão social</label>
+                        <input type="text" id="supplier_corporate_name" name="supplier_corporate_name" class="form-control" placeholder="Digite o código" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col" style="text-align: right;">
+                        <a href="listProducts.php" class="btn btn-secondary">Voltar</a>
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </div>
             </fieldset>
         </form>
     </div>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

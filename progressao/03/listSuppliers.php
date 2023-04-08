@@ -1,6 +1,12 @@
 <?php
 
-// $dados = file("data/suppliers.txt");
+ini_set("display_errors", true);
+
+# Chamando a conexão com o banco de dados
+require_once 'connect.php';
+require_once 'functions.php';
+
+$suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +27,7 @@
 		<div class="row">
 			<div class="col-10 offset-1">
 				<h1>Fornecedores</h1>
-				<a class="btn btn-dark btn-xs" href="cadProducts.php">
+				<a class="btn btn-dark btn-xs" href="cadSuppliers.php">
 					<span class="iconify" data-icon="material-symbols:add-box-rounded" data-width="25" data-height="25"></span>
 				</a>
 
@@ -35,12 +41,13 @@
 					</thead>
 					<tbody>
 
-						<?php foreach ($dados as $chave => $string) : ?>
-							<?php $linha = explode(" - ", $string); ?>
+					<?php foreach ($suppliers as $supplier) : ?>
 							<tr>
-								<?php foreach ($linha as $dado) : ?>
-									<td><?= $dado; ?></td>
-								<?php endforeach; ?>
+								<td><?= $supplier['supplier_name']; ?></td>
+								<td><?= $supplier['supplier_cnpj']; ?></td>
+								<td><?= $supplier['supplier_corporate_name']; ?></td>
+								<td><?= $supplier['supplier_created_in']; ?></td>
+								
 								<td>
 									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $chave; ?>">
 										<span class="iconify" data-icon="mdi:trash-can-empty" data-width="25" data-height="25"></span>

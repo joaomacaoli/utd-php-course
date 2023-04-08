@@ -13,7 +13,7 @@
     <?php include_once 'components/navbar.php'; ?>
 
     <div class="container">
-        <form action="createProducts.php" method="POST">
+        <form action="createProduct.php" method="POST">
             <fieldset>
                 <legend>Cadastro de Produtos</legend>
                 <div class="form-row">
