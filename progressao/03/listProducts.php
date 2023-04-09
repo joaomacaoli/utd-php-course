@@ -42,7 +42,7 @@ $products = select("products", null, null, " ORDER BY product_name");
 					</thead>
 					<tbody>
 
-					<?php foreach ($products as $product) : ?>
+						<?php foreach ($products as $product) : ?>
 							<tr>
 								<td><?= $product['product_name']; ?></td>
 								<td><?= $product['product_code']; ?></td>
@@ -51,28 +51,31 @@ $products = select("products", null, null, " ORDER BY product_name");
 								<td><?= $product['product_created_in']; ?></td>
 
 								<td>
-									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $chave; ?>">
+									<a href="formEditProduct.php?id=<?= $product['id_product']; ?>" class="btn btn-warning btn-xs">
+										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
+									</a>
+									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $product['id_product']; ?>">
 										<span class="iconify" data-icon="mdi:trash-can-empty" data-width="25" data-height="25"></span>
 									</button>
-									<a href="formEditProduct.php?id=<?=$product['id_product'];?>" class="btn btn-warning btn-xs">
-										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
-									</button>
 									<!-- Modal -->
-									<div class="modal fade" id="deletar-<?= $chave; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal fade" id="deletar-<?= $product['id_product']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registro?</h1>
-													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											<form action="deleteProduct.php" method="POST">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registro?</h1>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														Deseja excluir o produto <strong><?= $product['product_name']; ?></strong>? Essa alteração não pode ser desfeita!
+														<input type="hidden" name="id_product" value="<?= $product['id_product']; ?>">
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
+														<button type="submit" class="btn btn-success">Sim, pode continuar !</button>
+													</div>
 												</div>
-												<div class="modal-body">
-													Deseja excluir o producte <strong><?= $linha[0]; ?></strong>? Essa alteração não pode ser desfeita!
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
-													<a href="deleteProducts.php?id=<?= $chave; ?>" type="button" class="btn btn-success">Sim, pode continuar !</a>
-												</div>
-											</div>
+											</form>
 										</div>
 									</div>
 								</td>
