@@ -51,28 +51,31 @@ $clients = select("clients", null, null, " ORDER BY client_name");
 								<td><?= $client['client_adddress']; ?></td>
 								<td><?= $client['client_created_in']; ?></td>
 								<td>
-									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $chave; ?>">
+									<a href="formEditClient.php?id=<?= $client['id_client']; ?>" class="btn btn-warning btn-xs">
+										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
+									</a>
+									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $client['id_client']; ?>">
 										<span class="iconify" data-icon="mdi:trash-can-empty" data-width="25" data-height="25"></span>
 									</button>
-									<button class="btn btn-warning btn-xs">
-										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
-									</button>
 									<!-- Modal -->
-									<div class="modal fade" id="deletar-<?= $chave; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal fade" id="deletar-<?= $client['id_client']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registro?</h1>
-													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											<form action="deleteClient.php" method="POST">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registro?</h1>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														Deseja excluir o cliente <strong><?= $client['client_name']; ?></strong>? Essa alteração não pode ser desfeita!
+														<input type="hidden" name="id_client" value="<?= $client['id_client']; ?>">
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
+														<button type="submit" type="button" class="btn btn-success">Sim, pode continuar !</a>
+													</div>
 												</div>
-												<div class="modal-body">
-													Deseja excluir o cliente <strong><?= $linha[0]; ?></strong>? Essa alteração não pode ser desfeita!
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
-													<a href="deletar.php?id=<?= $chave; ?>" type="button" class="btn btn-success">Sim, pode continuar !</a>
-												</div>
-											</div>
+											</form>
 										</div>
 									</div>
 								</td>
