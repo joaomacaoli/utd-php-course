@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
-    <title>Cadastro Produtos</title>
+    <title>Cadastro de produtos</title>
 </head>
 
 <body>
@@ -15,14 +15,13 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-8 offset-2">
+            <div class="col-10 offset-1">
                 <form action="createProduct.php" method="POST">
                     <div class="card">
                         <div class="card-header">
                             Novo produto
                         </div>
                         <div class="card-body">
-
                             <div class="form-row">
                                 <div class="col">
                                     <label for="product_name">Nome</label>
