@@ -1,6 +1,6 @@
 <?php  
-	include_once 'connect.php';
-	include_once 'functions.php';
+	include_once 'db/connect.php';
+	include_once 'db/functions.php';
 
 	# Gravando os dados no banco
 	$result = insert("products", $_POST);

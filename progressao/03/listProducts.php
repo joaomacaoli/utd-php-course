@@ -3,19 +3,18 @@
 ini_set("display_errors", true);
 
 # Chamando a conexão com o banco de dados
-require_once 'connect.php';
-require_once 'functions.php';
+require_once 'db/connect.php';
+require_once 'db/functions.php';
 
 $products = select("products", null, null, " ORDER BY product_name");
 
 ?>
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
 	<meta charset="utf-8">
-	<title> Lista de Produtos </title>
+	<title> Lista de produtos </title>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css">

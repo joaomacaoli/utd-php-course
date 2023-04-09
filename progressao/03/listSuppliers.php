@@ -3,14 +3,14 @@
 ini_set("display_errors", true);
 
 # Chamando a conexão com o banco de dados
-require_once 'connect.php';
-require_once 'functions.php';
+require_once 'db/connect.php';
+require_once 'db/functions.php';
 
 $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
 	<meta charset="utf-8">
