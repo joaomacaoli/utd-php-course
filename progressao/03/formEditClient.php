@@ -18,7 +18,7 @@
             <div class="col-8 offset-2">
                 <form action="editClient.php" method="POST">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-dark text-white">
                             Novo cliente
                         </div>
                         <div class="card-body">

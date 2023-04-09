@@ -18,7 +18,7 @@
             <div class="col-10 offset-1">
                 <form action="createClient.php" method="POST">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-dark text-white">
                             Novo cliente
                         </div>
                         <div class="card-body">

@@ -30,7 +30,7 @@ if (isset($_GET['id'])) {
 			<div class="col-8 offset-2">
 				<form action="editProduct.php" method="POST">
 					<div class="card">
-						<div class="card-header">
+						<div class="card-header bg-dark text-white">
 							Editar produto
 						</div>
 						<div class="card-body">

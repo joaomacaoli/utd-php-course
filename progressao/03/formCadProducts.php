@@ -18,7 +18,7 @@
             <div class="col-8 offset-2">
                 <form action="createProduct.php" method="POST">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-dark text-white">
                             Novo produto
                         </div>
                         <div class="card-body">
@@ -45,6 +45,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
