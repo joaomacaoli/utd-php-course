@@ -30,7 +30,6 @@ $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 				<a class="btn btn-dark btn-xs" href="formCadSuppliers.php">
 					<span class="iconify" data-icon="material-symbols:add-box-rounded" data-width="25" data-height="25"></span>
 				</a>
-
 				<table class="table table-bordered border-primary" id="myTable">
 					<thead class="text-center bg-dark text-white">
 						<th> Nome </th>
@@ -40,23 +39,19 @@ $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 						<th> Ações </th>
 					</thead>
 					<tbody>
-
-					<?php foreach ($suppliers as $supplier) : ?>
+						<?php foreach ($suppliers as $supplier) : ?>
 							<tr>
 								<td><?= $supplier['supplier_name']; ?></td>
 								<td><?= $supplier['supplier_cnpj']; ?></td>
 								<td><?= $supplier['supplier_corporate_name']; ?></td>
 								<td><?= $supplier['supplier_created_in']; ?></td>
-								
 								<td>
 									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $chave; ?>">
 										<span class="iconify" data-icon="mdi:trash-can-empty" data-width="25" data-height="25"></span>
 									</button>
-
 									<button class="btn btn-warning btn-xs">
 										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
 									</button>
-
 									<!-- Modal -->
 									<div class="modal fade" id="deletar-<?= $chave; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
@@ -84,20 +79,15 @@ $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 			</div>
 		</div>
 	</div>
-
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
 	<!-- Bootstrap -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 	<!-- Icones -->
 	<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
 	<!-- DataTables -->
 	<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
-
 	<!-- Custom Script -->
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -129,7 +119,6 @@ $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 			});
 		});
 	</script>
-
 </body>
 
 </html>

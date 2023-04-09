@@ -30,7 +30,6 @@ $products = select("products", null, null, " ORDER BY product_name");
 				<a class="btn btn-dark btn-xs" href="formCadProducts.php">
 					<span class="iconify" data-icon="material-symbols:add-box-rounded" data-width="25" data-height="25"></span>
 				</a>
-
 				<table class="table table-bordered border-primary" id="myTable">
 					<thead class="text-center bg-dark text-white">
 						<th> Nome produtos </th>
@@ -41,7 +40,6 @@ $products = select("products", null, null, " ORDER BY product_name");
 						<th> Ações </th>
 					</thead>
 					<tbody>
-
 						<?php foreach ($products as $product) : ?>
 							<tr>
 								<td><?= $product['product_name']; ?></td>
@@ -49,7 +47,6 @@ $products = select("products", null, null, " ORDER BY product_name");
 								<td><?= $product['product_price']; ?></td>
 								<td><?= $product['product_stock']; ?></td>
 								<td><?= $product['product_created_in']; ?></td>
-
 								<td>
 									<a href="formEditProduct.php?id=<?= $product['id_product']; ?>" class="btn btn-warning btn-xs">
 										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
@@ -88,17 +85,13 @@ $products = select("products", null, null, " ORDER BY product_name");
 	</div>
 	<!-- Jquery -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
 	<!-- Bootstrap -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 	<!-- Icones -->
 	<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
 	<!-- DataTables -->
 	<script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
-
 	<!-- Custom Script -->
 	<script type="text/javascript">
 		$(document).ready(function() {
