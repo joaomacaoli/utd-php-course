@@ -1,3 +1,13 @@
+<?php
+require_once 'db/connect.php';
+require_once 'db/functions.php';
+
+if (isset($_GET['id'])) {
+	$filter['id_supplier'] = $_GET['id'];
+	$supplier = select("suppliers", null, $filter, " LIMIT 1")[0];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -16,7 +26,7 @@
     <div class="container">
         <div class="row">
             <div class="col-8 offset-2">
-                <form action="createSupplier.php" method="POST">
+                <form action="editSupplier.php" method="POST">
                     <div class="card">
                         <div class="card-header bg-dark text-white">
                             Novo fornecedor
@@ -25,16 +35,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="supplier_name">Nome</label>
-                                    <input type="text" id="supplier_name" name="supplier_name" class="form-control" placeholder="Digite o nome do fornecedor" required><br>
+                                    <input type="text" id="supplier_name" name="supplier_name" class="form-control" placeholder="Digite o nome do fornecedor" value="<?= $supplier['supplier_name']; ?>"required><br>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="supplier_cnpj">CNPJ</label>
-                                    <input type="text" id="supplier_cnpj" name="supplier_cnpj" class="form-control" placeholder="Digite seu CNPJ" required min="1" maxlength="14" step="1"><br>
+                                    <input type="text" id="supplier_cnpj" name="supplier_cnpj" class="form-control" placeholder="Digite seu CNPJ" required min="1" maxlength="14" step="1" value="<?= $supplier['supplier_cnpj']; ?>"><br>
                                 </div>
                                 <div class="col-md-12">
                                     <label for="supplier_corporate_name">Razão social</label>
-                                    <input type="text" id="supplier_corporate_name" name="supplier_corporate_name" class="form-control" placeholder="Digite a razão social da empresa" required><br>
+                                    <input type="text" id="supplier_corporate_name" name="supplier_corporate_name" class="form-control" placeholder="Digite a razão social da empresa" value="<?= $supplier['supplier_corporate_name']; ?>" required><br>
                                 </div>
+								<input type="hidden" name="id_supplier" value="<?= $supplier['id_supplier']; ?>">
                                 <div class="col-md-12" style="text-align: right;">
                                     <a href="listSuppliers.php" class="btn btn-secondary"> Cancelar </a>
                                     <button type="submit" class="btn btn-primary"> Salvar </button>

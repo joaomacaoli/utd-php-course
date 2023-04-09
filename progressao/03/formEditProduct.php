@@ -36,19 +36,19 @@ if (isset($_GET['id'])) {
 						<div class="card-body">
 							<div class="row">
 								<div class="col-md-8">
-									<label> Nome Produto: <span class="text-danger">*</span> </label><br>
+									<label for="product_name">Nome</label>
 									<input type="text" name="product_name" class="form-control" required placeholder="Digite o nome" value="<?= $product['product_name']; ?>"><br>
 								</div>
 								<div class="col-md-4">
-									<label> Código: <span class="text-danger">*</span></label><br>
+									<label for="product_code">Código</label>
 									<input type="text" name="product_code" class="form-control" required placeholder="Digite o Código" maxlength="12" value="<?= $product['product_code']; ?>"><br>
 								</div>
 								<div class="col-md-6">
-									<label> Estoque: <span class="text-danger">*</span></label><br>
+									<label for="product_stock">Estoque</label>
 									<input type="number" min=1 step=1 name="product_stock" class="form-control" required placeholder="Digite o Estoque" value="<?= $product['product_stock']; ?>"><br>
 								</div>
 								<div class="col-md-6">
-									<label> Preço: <span class="text-danger">*</span> </label><br>
+									<label for="product_price">Preço</label>
 									<input type="text" name="product_price" class="form-control" required placeholder="Digite o Preço" value="<?= $product['product_price']; ?>"><br>
 								</div>
 								<input type="hidden" name="id_product" value="<?= $product['id_product']; ?>">

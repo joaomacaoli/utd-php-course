@@ -46,29 +46,31 @@ $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 								<td><?= $supplier['supplier_corporate_name']; ?></td>
 								<td><?= $supplier['supplier_created_in']; ?></td>
 								<td>
-									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $chave; ?>">
+									<a href="formEditSupplier.php?id=<?= $supplier['id_supplier']; ?>" class="btn btn-warning btn-xs">
+										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
+									</a>
+									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $supplier['id_supplier']; ?>">
 										<span class="iconify" data-icon="mdi:trash-can-empty" data-width="25" data-height="25"></span>
 									</button>
-									<button class="btn btn-warning btn-xs">
-										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
-									</button>
 									<!-- Modal -->
-									<div class="modal fade" id="deletar-<?= $chave; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+									<div class="modal fade" id="deletar-<?= $supplier['id_supplier']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 										<div class="modal-dialog">
-
-											<div class="modal-content">
-												<div class="modal-header">
-													<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registro?</h1>
-													<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											<form action="deleteSupplier.php" method="POST">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h1 class="modal-title fs-5" id="exampleModalLabel">Excluir Registro?</h1>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														Deseja excluir o fornecedor <strong><?= $supplier['supplier_name']; ?></strong>? Essa alteração não pode ser desfeita!
+														<input type="hidden" name="id_supplier" value="<?= $supplier['id_supplier']; ?>">
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
+														<button type="submit" class="btn btn-success">Sim, pode continuar !</button>
+													</div>
 												</div>
-												<div class="modal-body">
-													Deseja excluir o cliente <strong><?= $linha[0]; ?></strong>? Essa alteração não pode ser desfeita!
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não, Sair!</button>
-													<a href="deleteSuppliers.php?id=<?= $chave; ?>" type="button" class="btn btn-success">Sim, pode continuar !</a>
-												</div>
-											</div>
+											</form>
 										</div>
 									</div>
 								</td>

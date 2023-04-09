@@ -65,7 +65,7 @@
                             <br>
                             <div class="form-row">
                                 <div class="col" style="text-align: right;">
-                                    <a href="listProducts.php" class="btn btn-secondary"> Cancelar </a>
+                                    <a href="listClients.php" class="btn btn-secondary"> Cancelar </a>
                                     <button type="submit" class="btn btn-primary"> Salvar </button>
                                 </div>
                             </div>
