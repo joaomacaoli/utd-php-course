@@ -27,7 +27,7 @@ $products = select("products", null, null, " ORDER BY product_name");
 		<div class="row">
 			<div class="col-10 offset-1">
 				<h1>Produtos</h1>
-				<a class="btn btn-dark btn-xs" href="cadProducts.php">
+				<a class="btn btn-dark btn-xs" href="formCadProducts.php">
 					<span class="iconify" data-icon="material-symbols:add-box-rounded" data-width="25" data-height="25"></span>
 				</a>
 
@@ -54,7 +54,7 @@ $products = select("products", null, null, " ORDER BY product_name");
 									<button class="btn btn-danger btn-xs" data-bs-toggle="modal" data-bs-target="#deletar-<?= $chave; ?>">
 										<span class="iconify" data-icon="mdi:trash-can-empty" data-width="25" data-height="25"></span>
 									</button>
-									<button class="btn btn-warning btn-xs">
+									<a href="formEditProduct.php?id=<?=$product['id_product'];?>" class="btn btn-warning btn-xs">
 										<span class="iconify" data-icon="mdi:lead-pencil" data-width="25" data-height="25"></span>
 									</button>
 									<!-- Modal -->

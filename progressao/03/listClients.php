@@ -28,7 +28,7 @@ $clients = select("clients", null, null, " ORDER BY client_name");
 		<div class="row">
 			<div class="col-10 offset-1">
 				<h1>Clientes</h1>
-				<a class="btn btn-dark btn-xs" href="cadClients.php">
+				<a class="btn btn-dark btn-xs" href="formCadClients.php">
 					<span class="iconify" data-icon="material-symbols:add-box-rounded" data-width="25" data-height="25"></span>
 				</a>
 

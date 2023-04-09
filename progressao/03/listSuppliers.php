@@ -27,7 +27,7 @@ $suppliers = select("suppliers", null, null, " ORDER BY supplier_name");
 		<div class="row">
 			<div class="col-10 offset-1">
 				<h1>Fornecedores</h1>
-				<a class="btn btn-dark btn-xs" href="cadSuppliers.php">
+				<a class="btn btn-dark btn-xs" href="formCadSuppliers.php">
 					<span class="iconify" data-icon="material-symbols:add-box-rounded" data-width="25" data-height="25"></span>
 				</a>
 
