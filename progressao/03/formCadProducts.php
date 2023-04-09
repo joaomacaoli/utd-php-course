@@ -13,45 +13,38 @@
 <body>
     <?php include_once 'components/navbar.php'; ?>
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-10 offset-1">
+            <div class="col-8 offset-2">
                 <form action="createProduct.php" method="POST">
                     <div class="card">
                         <div class="card-header">
                             Novo produto
                         </div>
                         <div class="card-body">
-                            <div class="form-row">
-                                <div class="col">
+                            <div class="row">
+                                <div class="col-md-8">
                                     <label for="product_name">Nome</label>
-                                    <input type="text" id="product_name" name="product_name" class="form-control" placeholder="Digite o nome do produto" required>
+                                    <input type="text" id="product_name" name="product_name" class="form-control" placeholder="Digite o nome do produto" required><br>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-4">
                                     <label for="product_code">Código</label>
-                                    <input type="text" id="product_code" name="product_code" class="form-control" placeholder="Digite o código" required>
+                                    <input type="text" id="product_code" name="product_code" class="form-control" placeholder="Digite o código" required><br>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="form-row">
-                                <div class="col">
+                                <div class="col-md-6">
                                     <label for="product_stock">Estoque</label>
-                                    <input type="number" id="product_stock" name="product_stock" class="form-control" placeholder="Digite a quantidade em estoque" required min="1" step="1">
+                                    <input type="number" id="product_stock" name="product_stock" class="form-control" placeholder="Digite a quantidade em estoque" required min="1" step="1"><br>
                                 </div>
-                                <div class="col">
+                                <div class="col-md-6">
                                     <label for="product_price">Preço</label>
-                                    <input type="number" id="product_price" name="product_price" class="form-control" placeholder="Digite o preço" required min="0.01" step="0.01">
+                                    <input type="number" id="product_price" name="product_price" class="form-control" placeholder="Digite o preço" required min="0.01" step="0.01"><br>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="form-row">
-                                <div class="col" style="text-align: right;">
+                                <div class="col-md-12" style="text-align: right;">
                                     <a href="listProducts.php" class="btn btn-secondary"> Cancelar </a>
                                     <button type="submit" class="btn btn-primary"> Salvar </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>

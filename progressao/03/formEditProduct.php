@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
 				<form action="editProduct.php" method="POST">
 					<div class="card">
 						<div class="card-header">
-							Edição de produto
+							Editar produto
 						</div>
 						<div class="card-body">
 							<div class="row">
@@ -39,24 +39,19 @@ if (isset($_GET['id'])) {
 									<label> Nome Produto: <span class="text-danger">*</span> </label><br>
 									<input type="text" name="product_name" class="form-control" required placeholder="Digite o nome" value="<?= $product['product_name']; ?>"><br>
 								</div>
-
 								<div class="col-md-4">
 									<label> Código: <span class="text-danger">*</span></label><br>
 									<input type="text" name="product_code" class="form-control" required placeholder="Digite o Código" maxlength="12" value="<?= $product['product_code']; ?>"><br>
 								</div>
-
 								<div class="col-md-6">
 									<label> Estoque: <span class="text-danger">*</span></label><br>
-									<input type="number" min=0 step=1 name="product_stock" class="form-control" required placeholder="Digite o Estoque" value="<?= $product['product_stock']; ?>"><br>
+									<input type="number" min=1 step=1 name="product_stock" class="form-control" required placeholder="Digite o Estoque" value="<?= $product['product_stock']; ?>"><br>
 								</div>
-
 								<div class="col-md-6">
 									<label> Preço: <span class="text-danger">*</span> </label><br>
 									<input type="text" name="product_price" class="form-control" required placeholder="Digite o Preço" value="<?= $product['product_price']; ?>"><br>
 								</div>
-
 								<input type="hidden" name="id_product" value="<?= $product['id_product']; ?>">
-
 								<div class="col-md-12" style="text-align: right;">
 									<a href="listProducts.php" class="btn btn-secondary"> Cancelar </a>
 									<button type="submit" class="btn btn-primary"> Salvar </button>
