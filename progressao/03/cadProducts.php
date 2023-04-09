@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
     <title>Cadastro Produtos</title>
 </head>
 
@@ -15,7 +16,7 @@
     <div class="container">
         <form action="createProduct.php" method="POST">
             <fieldset>
-                <legend>Cadastro de Produtos</legend>
+                <legend>Novo produto</legend>
                 <div class="form-row">
                     <div class="col">
                         <label for="product_name">Nome</label>
@@ -26,6 +27,7 @@
                         <input type="text" id="product_code" name="product_code" class="form-control" placeholder="Digite o código" required>
                     </div>
                 </div>
+                <br>
                 <div class="form-row">
                     <div class="col">
                         <label for="product_stock">Estoque</label>
@@ -38,7 +40,7 @@
                 </div>
                 <br>
                 <div class="form-row">
-                    <div class="col text-right">
+                    <div class="col" style="text-align: right;">
                         <a href="listProducts.php" class="btn btn-secondary">Voltar</a>
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
@@ -46,7 +48,6 @@
             </fieldset>
         </form>
     </div>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
